@@ -1,35 +1,23 @@
-//function setup() {
-//createCanvas(windowWidh, windowHeight);
-//background(0);
-//}
-
-//function draw() {}
-
-let x, y, d;
-
 function setup() {
   createCanvas(windowWidth, windowHeight);
-
-  // Definir la posición y el diámetro del círculo
-  x = width / 2;
-  y = height / 2;
-  d = 100;
+  background(0);
+  noStroke();
 }
 
 function draw() {
-  background(0);
-
-  // Comprobar si el mouse está dentro del círculo
-  let distancia = dist(mouseX, mouseY, x, y);
-  if (distancia < d / 2) {
-    // Si el mouse está dentro del círculo, cambiar a color rojo
-    fill(255, 0, 0);
+  //Cambiar el color del círculo dependiendo de la posición del mouse
+  if (mouseX < width / 3) {
+    fill(255, 0, 0); // Rojo en la izquierda
+  } else if (mouseX < (2 * width) / 3) {
+    fill(0, 255, 0); // Verde en el centro
   } else {
-    // Si no, el círculo permanece azul
-    fill(0, 0, 255);
+    fill(0, 0, 255); // Azul en la derecha
   }
 
-  // Dibujar el círculo
-  ellipse(x, y, d);
-
+  // Cambiar el tamaño del círculo al hacer clic
+  if (mouseIsPressed) {
+    ellipse(mouseX, mouseY, 100, 100); // Círculo grande
+  } else {
+    ellipse(mouseX, mouseY, 50, 50); // Círculo pequeño
+  }
 }
