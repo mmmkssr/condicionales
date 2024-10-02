@@ -1,23 +1,24 @@
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  background(0);
-  noStroke();
+  background(191, 144, 117);
+  stroke(242);
 }
 
 function draw() {
-  //Cambiar el color del círculo dependiendo de la posición del mouse
+  // Cambiar color de los círculos según la ubicación del mouse
   if (mouseX < width / 3) {
-    fill(255, 0, 0); // Rojo en la izquierda
+    fill(253, 119, 244); // Rosado con el mouse a la izquierda
   } else if (mouseX < (2 * width) / 3) {
-    fill(0, 255, 0); // Verde en el centro
+    fill(99, 31, 176); // Morado oscuro con el mouse en el centro
   } else {
-    fill(0, 0, 255); // Azul en la derecha
+    fill(121, 72, 197); // Morado claro con el mouse en la derecha
   }
 
-  // Cambiar el tamaño del círculo al hacer clic
+  // Cambiar la forma al hacer clic
+
   if (mouseIsPressed) {
-    ellipse(mouseX, mouseY, 100, 100); // Círculo grande
+    rect(mouseX - 25, mouseY - 25, 100, 100); // cambia a cuadrado
   } else {
-    ellipse(mouseX, mouseY, 50, 50); // Círculo pequeño
+    ellipse(mouseX, mouseY, 50, 50); // regresa a la forma original
   }
 }

@@ -44,7 +44,7 @@ Permiten detectar eventos de usuario
 
 ### mouseIsPressed
 
-`true` si se presiona algún botón del mouse 
+`true` si se presiona algún botón del mouse
 `false` si no se presiona
 
 ### keyIsPressed
@@ -52,4 +52,18 @@ Permiten detectar eventos de usuario
 `true` si se presiona alguna tecla
 `false` si no
 
+Se usó la condicional `if` para cambiar el color del círculo según la posición del mouse de la siguiente manera, para dividir el canvas en tres cuadrantes:
 
+```js
+if (mouseX < width / 3)
+```
+
+Se utilizó la variable `mouseIsPressed` , con las condicionales `if` y `else` para cambiar la forma a un cuadrado al hacer clic y que regrese a la forma original de la siguiente manera:
+
+```js
+if (mouseIsPressed) {
+  rect(mouseX - 25, mouseY - 25, 100, 100);
+} else {
+  ellipse(mouseX, mouseY, 50, 50); // regresa a la forma original
+}
+```
